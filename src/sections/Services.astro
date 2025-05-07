@@ -45,6 +45,20 @@ const optimized_services = [
 ];
 ---
 
+<script>
+  const serviceCards = document.querySelectorAll('.serviceCard');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate-fade-in-up');
+      }
+    });
+  });
+
+  serviceCards.forEach((serviceCard) => observer.observe(serviceCard));
+</script>
+
 <section id="services" class="relative">
   <div class="max-w-[1200px] mx-auto py-20 max-xl:px-10">
     <h2 class="text-center text-3xl mb-10">SERVICIOS</h2>
@@ -54,7 +68,7 @@ const optimized_services = [
       {
         services.map((service) => {
           return (
-            <div class="transition-all duration-200 hover:scale-101 border-3 border-primary p-5 rounded-2xl">
+            <div class="serviceCard transition-all duration-200 hover:scale-101 border-3 border-primary p-5 rounded-2xl">
               <h3 class="text-xl font-bold">{service.title}</h3>
               <p class="text-center text-5xl font-extrabold my-10">{service.price}</p>
               <p>{service.description}</p>
@@ -78,7 +92,7 @@ const optimized_services = [
       {
         optimized_services.map((service) => {
           return (
-            <div class="transition-all duration-200 hover:scale-101 border-3 border-primary p-5 rounded-2xl">
+            <div class="serviceCard transition-all duration-200 hover:scale-101 border-3 border-primary p-5 rounded-2xl">
               <h3 class="text-xl font-bold">{service.title}</h3>
               <p class="text-center text-5xl font-extrabold my-10">{service.price}</p>
               <p>{service.description}</p>
