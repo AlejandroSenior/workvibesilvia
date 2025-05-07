@@ -1,16 +1,16 @@
 ---
 const links: { href: string; name: string }[] = [
   {
-    href: '#',
-    name: 'Sobre mí'
-  },
-  {
     href: '/#services',
     name: 'Servicios'
   },
   {
-    href: '#',
-    name: 'Productos'
+    href: '/#ebook',
+    name: 'Ebook'
+  },
+  {
+    href: '/#contact',
+    name: 'Contacto'
   }
 ];
 
@@ -32,8 +32,8 @@ const currentPath = Astro.url.pathname;
 </script>
 
 <header class="bg-transparent border-gray-200 mb-[50px] lg:mb-[150px] max-w-[1200px] mx-auto mt-10">
-  <nav class="relative flex items-center justify-between py-6 px-10">
-    <div class="hidden w-full lg:block lg:w-auto">
+  <nav class="relative flex items-center justify-between py-6 max-lg:px-10">
+    <div class="hidden lg:block lg:w-auto">
       <ul class="flex space-x-8">
         {
           links.map(({ href, name }) => (
@@ -47,8 +47,8 @@ const currentPath = Astro.url.pathname;
       </ul>
     </div>
 
-    <a href="https://flowbite.com/" class="max-lg:hidden">
-      <button class="rounded-lg py-4 px-10 text-xl text-white bg-secondary">Reserva tu asesoría</button>
+    <a href="/#contact" class="max-lg:hidden">
+      <button class="rounded-lg py-4 px-10 text-xl text-white bg-secondary cursor-pointer">Reserva tu asesoría</button>
     </a>
 
     <button type="button" id="menu-button" class="lg:hidden absolute right-10">
