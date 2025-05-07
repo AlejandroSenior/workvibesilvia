@@ -1,0 +1,19 @@
+---
+import { Image } from 'astro:assets';
+import EbookMockup from '@/assets/ebook.avif';
+---
+
+<section class="bg-primary text-white py-20">
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-20 max-w-[1200px] mx-auto max-xl:px-10">
+    <Image src={EbookMockup} alt="Background" class="col-span-2 w-full" />
+
+    <div class="self-center">
+      <h3 class="text-2xl">Mi ebook de mitema</h3>
+
+      <p class="mt-5">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus tempore aspernatur, ullam dolor fuga corporis doloremque animi
+        nihil. Hic laborum rem numquam sapiente est aspernatur sed accusamus, nam quidem qui.
+      </p>
+    </div>
+  </div>
+</section>

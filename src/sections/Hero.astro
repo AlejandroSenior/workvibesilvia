@@ -1,0 +1,80 @@
+---
+import { Image } from 'astro:assets';
+import HeroImage from '@/assets/silvia.avif';
+import HeroBackground from '@/assets/hero-background.avif';
+---
+
+<section class="max-w-[1200px] max-xl:px-10 mx-auto">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+    <div class="content-baseline text-balance">
+      <h1 class="text-5xl font-bold">Tu carrera, tu éxito, tu estrategia</h1>
+      <p class="mt-5 text-xl">
+        Te ayudo a <b>posicionarte, destacar y conseguir oportunidades reales</b> con estrategias de empleabilidad, marca personal y networking
+        que funcionan
+      </p>
+      <button class="rounded-lg py-4 px-10 mt-10 text-xl text-white bg-secondary">Reserva tu asesoría</button>
+    </div>
+
+    <div class="justify-items-center xl:justify-items-end max-lg:mt-14 -z-1">
+      <Image src={HeroImage} alt="Silvia" id="hero-img" class="w-[300px] lg:w-[400px]" />
+    </div>
+  </div>
+
+  <Image src={HeroBackground} alt="Background" class="max-lg:hidden absolute -top-10 right-0 -z-10" />
+</section>
+
+<div class="shape-divider -mt-18 lg:-mt-40">
+  <svg
+    data-name="Layer 1"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 1200 120"
+    preserveAspectRatio="none"
+    class="w-full h-[70px] lg:w-[135%] lg:h-[150px]"
+  >
+    <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
+  </svg>
+</div>
+
+<section class="bg-primary text-white py-20">
+  <div class="max-w-[1200px] mx-auto max-xl:px-10">
+    <p>
+      Soy Silvia Moreno y llevo 15 años en el mundo laboral y corporativo. Sé lo que es sentirse perdido en la búsqueda de empleo, querer
+      crecer profesionalmente sin saber cómo o sentir que no hay nadie que te ayude en el camino. Justo por eso, hoy estoy aquí: para que tú
+      no te sientas solo en tu carrera profesional.
+    </p>
+    <p class="mt-5">
+      <b>Te ayudo a destacar en el mundo laboral</b> con estrategias claras, herramientas efectivas y un plan real para que consigas ese trabajo,
+      esa promoción o esa visibilidad que necesitas.
+    </p>
+    <p class="mt-5">
+      <b>He colaborado</b> en charlas y talleres sobre empleabilidad, RRHH y desarrollo de talento. También he trabajado con marcas y plataformas
+      líderes en el sector, ofreciendo insights clave para que miles de personas logren sus objetivos profesionales.
+    </p>
+    <p class="mt-5">
+      En redes sociales, <b>desmitifico el mundo laboral</b> con contenido real, consejos prácticos y hacks que funcionan. Mi comunidad en TikTok
+      y LinkedIn (@workvibesilvia) crece día a día porque aporto valor con estrategias que realmente generan resultados.
+    </p>
+    <p class="mt-5">
+      <b>Mi misión es ayudarte a tomar el control de tu futuro profesional.</b> No importa en qué punto estés, juntos crearemos la mejor estrategia
+      para que logres lo que te propones.
+    </p>
+  </div>
+</section>
+
+<style>
+  #hero-img {
+    /* Primera máscara: degradado horizontal (izquierda y derecha) */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 95%, transparent 100%);
+
+    /* Segunda máscara: degradado vertical (abajo) */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 95%, transparent 100%),
+      linear-gradient(to top, transparent 0%, black 10%, black 100%);
+
+    -webkit-mask-composite: intersect; /* Combina ambas máscaras */
+    mask-composite: intersect;
+
+    mask-mode: match-source;
+    mask-repeat: no-repeat;
+    mask-size: 100% 100%;
+  }
+</style>

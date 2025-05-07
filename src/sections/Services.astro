@@ -1,0 +1,112 @@
+---
+import { Image } from 'astro:assets';
+import ServicesBackground from '@/assets/services-background.avif';
+
+const services = [
+  {
+    title: 'Revisión y envío de CV',
+    price: '25€',
+    description:
+      'Si solo necesitas pulir tu CV y darle un formato optimizado con ajustes estratégicos, esta opción es para ti. Te lo dejo listo para enviar sin perder tiempo.'
+  },
+  {
+    title: 'Asesoría 1:1',
+    price: '69€',
+    description:
+      'Nos ponemos serios: analizamos tu situación, identificamos qué te está frenando y trazamos una estrategia efectiva para que consigas el trabajo que quieres.'
+  }
+];
+
+const optimized_services = [
+  {
+    title: 'Asesoría + Optimización de CV',
+    price: '89€',
+    description:
+      'Vamos más allá de la revisión: analizamos a fondo tu CV, detectamos puntos débiles y lo ajustamos para que supere filtros y capte la atención de los reclutadores. Si hace falta, lo reconstruimos desde cero.'
+  },
+  {
+    title: 'Asesoría + Optimización de LinkedIn',
+    price: '119€',
+    description:
+      'Hacemos que tu LinkedIn deje de ser un simple perfil y se convierta en una máquina de atracción de oportunidades. Optimización total para que los reclutadores te encuentren y te lleguen más ofertas.'
+  },
+  {
+    title: 'Asesoría + Simulación de Entrevista',
+    price: '149€',
+    description:
+      'Si las entrevistas te ponen nervioso, esta es tu opción. Practicamos juntos, afinamos respuestas, trabajamos en seguridad y te doy estrategias ganadoras para que cierres la oferta con éxito.'
+  },
+  {
+    title: 'La opción top: Pack CV + LinkedIn + Entrevista',
+    price: '175€',
+    description:
+      'Si quieres una transformación total, este es tu combo ganador: CV optimizado, LinkedIn potente y preparación de entrevistas. Todo alineado para que consigas el trabajo que realmente quieres.'
+  }
+];
+---
+
+<section class="relative">
+  <div class="max-w-[1200px] mx-auto py-20 max-xl:px-10">
+    <h2 class="text-center text-3xl mb-10">SERVICIOS</h2>
+
+    <p class="text-lg text-center mb-5">🚀 Tú eliges cómo transformar tu carrera</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+      {
+        services.map((service) => {
+          return (
+            <div class="transition-all duration-200 hover:scale-101 border-3 border-primary p-5 rounded-2xl">
+              <h3 class="text-xl font-bold">{service.title}</h3>
+              <p class="text-center text-5xl font-extrabold my-10">{service.price}</p>
+              <p>{service.description}</p>
+
+              <div class="text-center mt-10 mb-3">
+                <a
+                  href="https://calendly.com/workvibesilvia/asesoria-1-1"
+                  class="mt-5 text-center bg-secondary text-white py-2 px-20 rounded-lg"
+                >
+                  Me interesa
+                </a>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <p class="text-lg text-center mb-5 mt-10">🔥 Optimización completa</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-10">
+      {
+        optimized_services.map((service) => {
+          return (
+            <div class="transition-all duration-200 hover:scale-101 border-3 border-primary p-5 rounded-2xl">
+              <h3 class="text-xl font-bold">{service.title}</h3>
+              <p class="text-center text-5xl font-extrabold my-10">{service.price}</p>
+              <p>{service.description}</p>
+
+              <div class="text-center mt-10 mb-3">
+                <a
+                  href="https://calendly.com/workvibesilvia/asesoria-1-1"
+                  class="mt-5 text-center bg-secondary text-white py-2 px-20 rounded-lg"
+                >
+                  Me interesa
+                </a>
+              </div>
+            </div>
+          );
+        })
+      }
+    </div>
+
+    <p class="text-center text-md italic mt-10">
+      Todos mis packs incluyen feedback personalizado y estrategias adaptadas a tu perfil profesional
+    </p>
+  </div>
+
+  <Image src={ServicesBackground} alt="Background" class="max-lg:hidden absolute -top-30 -left-10 w-full max-w-[1500px] opacity-10 -z-10" />
+</section>
+
+<div class="shape-divider">
+  <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none" class="w-full h-[100px]">
+    <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
+  </svg>
+</div>
