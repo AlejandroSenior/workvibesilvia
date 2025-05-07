@@ -4,7 +4,7 @@
     <input
       type="email"
       id="email"
-      class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+      class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5 focus:border-primary focus:outline-none"
       placeholder="John Doe"
       required
     />
@@ -14,14 +14,17 @@
     <input
       type="password"
       id="password"
-      class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5"
+      class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg block w-full p-2.5 focus:border-primary focus:outline-none"
       placeholder="johndoe@gmail.com"
       required
     />
   </div>
   <div class="mb-5">
     <label for="password" class="block mb-2 font-medium text-gray-900">Asunto</label>
-    <select id="countries" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+    <select
+      id="countries"
+      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 focus:border-primary focus:outline-none"
+    >
       <option>United States</option>
       <option>Canada</option>
       <option>France</option>
@@ -34,10 +37,9 @@
     <textarea
       id="message"
       rows="4"
-      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300"
+      class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:border-primary focus:outline-none"
       placeholder="Coméntame lo que necesites..."
-    >
-    </textarea>
+    ></textarea>
   </div>
 
   <button type="submit" class="w-full rounded-lg py-2 text-white bg-secondary">Enviar</button>

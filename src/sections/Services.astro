@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import ServicesBackground from '@/assets/services-background.avif';
+import ContactForm from '@/components/ContactForm.astro';
 
 const services = [
   {
@@ -46,7 +47,8 @@ const optimized_services = [
 ---
 
 <script>
-  const serviceCards = document.querySelectorAll('.serviceCard');
+  const $serviceCards = document.querySelectorAll('.serviceCard');
+  const $dialog = document.querySelector('dialog') as HTMLDialogElement;
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
@@ -56,7 +58,14 @@ const optimized_services = [
     });
   });
 
-  serviceCards.forEach((serviceCard) => observer.observe(serviceCard));
+  $serviceCards.forEach((serviceCard) => {
+    serviceCard.addEventListener('click', () => {
+      const dialog = document.querySelector('dialog');
+      $dialog.showModal();
+    });
+
+    observer.observe(serviceCard);
+  });
 </script>
 
 <section id="services" class="relative">
@@ -114,3 +123,20 @@ const optimized_services = [
     <path d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z" class="shape-fill"></path>
   </svg>
 </div>
+
+<dialog
+  class="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-xl w-[85%] md:w-full max-w-[500px] animate-slide-in-bottom"
+  closedby="any"
+>
+  <form method="dialog" class="p-10 text-pretty">
+    <h3 class="text-2xl font-bold text-center mb-5">Reserva tu asesoría</h3>
+
+    <ContactForm />
+  </form>
+</dialog>
+
+<style>
+  dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+</style>
