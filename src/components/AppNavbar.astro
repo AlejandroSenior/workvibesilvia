@@ -18,16 +18,23 @@ const currentPath = Astro.url.pathname;
 ---
 
 <script>
-  const mobileMenu = document.querySelector('#mobile-menu');
-  const menuButton = document.querySelector('#menu-button');
-  const closeMenuButton = document.querySelector('#close-menu-button');
+  const $mobileMenu = document.querySelector('#mobile-menu') as HTMLElement;
+  const $menuButton = document.querySelector('#menu-button') as HTMLElement;
+  const $closeMenuButton = document.querySelector('#close-menu-button') as HTMLElement;
+  const $menuOptions = document.querySelectorAll('.menu-option') as NodeListOf<HTMLElement>;
 
-  menuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+  $menuButton.addEventListener('click', () => {
+    $mobileMenu.classList.toggle('hidden');
   });
 
-  closeMenuButton?.addEventListener('click', () => {
-    mobileMenu?.classList.toggle('hidden');
+  $closeMenuButton.addEventListener('click', () => {
+    $mobileMenu.classList.toggle('hidden');
+  });
+
+  $menuOptions.forEach((option) => {
+    option.addEventListener('click', () => {
+      $mobileMenu.classList.toggle('hidden');
+    });
   });
 </script>
 
@@ -81,7 +88,7 @@ const currentPath = Astro.url.pathname;
                   <a
                     href={href}
                     class:list={[
-                      '-mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50',
+                      'menu-option -mx-3 block rounded-lg px-3 py-2 hover:bg-gray-50',
                       `${currentPath === `/${href}` ? 'bg-gray-300' : ''}`,
                       { 'font-bold': currentPath === `/$${href}` }
                     ]}
